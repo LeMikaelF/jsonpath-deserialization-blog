@@ -1,0 +1,51 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.03",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "123456789012",
+        "arn": "arn:aws:iam::123456789012:root",
+        "accountId": "123456789012",
+        "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+        "userName": "user"
+      },
+      "eventTime": "2016-05-20T08:27:45Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "TerminateInstances",
+      "awsRegion": "us-west-2",
+      "sourceIPAddress": "198.51.100.1",
+      "userAgent": "aws-cli/1.10.10 Python/2.7.9 Windows/7botocore/1.4.1",
+      "requestParameters": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-1a2b3c4d"
+            }
+          ]
+        }
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-1a2b3c4d",
+              "currentState": {
+                "code": 32,
+                "name": "shutting-down"
+              },
+              "previousState": {
+                "code": 16,
+                "name": "running"
+              }
+            }
+          ]
+        }
+      },
+      "requestID": "be112233-1ba5-4ae0-8e2b-1c302EXAMPLE",
+      "eventID": "6e12345-2a4e-417c-aa78-7594fEXAMPLE",
+      "eventType": "AwsApiCall",
+      "recipientAccountId": "123456789012"
+    }
+  ]
+}
