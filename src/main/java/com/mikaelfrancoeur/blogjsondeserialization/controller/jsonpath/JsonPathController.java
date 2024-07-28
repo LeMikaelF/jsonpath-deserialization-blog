@@ -39,7 +39,7 @@ public class JsonPathController {
         private final OffsetDateTime eventTime;
         private final List<String> instanceIds;
 
-        public CloudTrailLogDTO(InputStream json) {
+        private CloudTrailLogDTO(InputStream json) {
             DocumentContext documentContext = JsonPath.parse(json);
             this.userArn = documentContext.read(USER_ARN_JSON_PATH);
             this.eventTime = OffsetDateTime.parse(documentContext.read(EVENT_TIME_JSON_PATH));
