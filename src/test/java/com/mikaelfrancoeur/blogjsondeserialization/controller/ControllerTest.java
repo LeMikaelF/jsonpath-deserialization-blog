@@ -25,12 +25,14 @@ import org.springframework.web.context.WebApplicationContext;
 import com.mikaelfrancoeur.blogjsondeserialization.CloudTrailLogsService;
 import com.mikaelfrancoeur.blogjsondeserialization.controller.jackson.PlainController;
 import com.mikaelfrancoeur.blogjsondeserialization.controller.jsonpath.JsonPathController;
+import com.mikaelfrancoeur.blogjsondeserialization.controller.jsonpath.JsonPathDeclarativeController;
 
 import lombok.SneakyThrows;
 
 @WebMvcTest(controllers = {
         PlainController.class,
-        JsonPathController.class
+        JsonPathController.class,
+        JsonPathDeclarativeController.class
 })
 class ControllerTest implements WithAssertions {
 
@@ -47,7 +49,7 @@ class ControllerTest implements WithAssertions {
 
     @SneakyThrows
     @ParameterizedTest
-    @ValueSource(strings = { "jackson", "jsonpath" })
+    @ValueSource(strings = { "jackson", "jsonpath", "jsonpath-declarative" })
     void deserialize(String path) {
         mockMvc.perform(post("/cloudtrail/logs/" + path)
                         .contentType(MediaType.APPLICATION_JSON)
